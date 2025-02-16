@@ -57,7 +57,7 @@ class AuthTokenSerializer(serializers.Serializer):
                 raise serializers.ValidationError(msg, code="authorization")
 
         else:
-            msg = 'Must include "username" and "password".'
+            msg = 'Must include "email" and "password".'
             raise serializers.ValidationError(msg, code="authorization")
 
         attrs["user"] = user
