@@ -52,7 +52,6 @@ class AuthTokenSerializer(serializers.Serializer):
         if email and password:
             user = authenticate(request=self.context.get("request"),
                                 email=email, password=password)
-
             if not user:
                 msg = "Unable to log in with provided credentials."
                 raise serializers.ValidationError(msg, code="authorization")
